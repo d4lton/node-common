@@ -2,7 +2,7 @@
  * Copyright ©2021 Dana Basken
  */
 
-import {Utilities} from "../";
+import {Utilities} from "./Utilities";
 
 export class ObjectUtilities {
 
