@@ -42,7 +42,7 @@ Get a dot-separated key from an object. If not found, return defaultValue.
 
 #### Defined in
 
-[src/ObjectUtilities.ts:12](https://github.com/d4lton/node-common/blob/22c7b35/src/ObjectUtilities.ts#L12)
+[src/ObjectUtilities.ts:12](https://github.com/d4lton/node-common/blob/60b873c/src/ObjectUtilities.ts#L12)
 
 ___
 
@@ -65,7 +65,7 @@ Get all the keys for an object as an array of dot-separated strings.
 
 #### Defined in
 
-[src/ObjectUtilities.ts:52](https://github.com/d4lton/node-common/blob/22c7b35/src/ObjectUtilities.ts#L52)
+[src/ObjectUtilities.ts:52](https://github.com/d4lton/node-common/blob/60b873c/src/ObjectUtilities.ts#L52)
 
 ___
 
@@ -89,4 +89,4 @@ Set a dot-separated key's value into an object.
 
 #### Defined in
 
-[src/ObjectUtilities.ts:39](https://github.com/d4lton/node-common/blob/22c7b35/src/ObjectUtilities.ts#L39)
+[src/ObjectUtilities.ts:39](https://github.com/d4lton/node-common/blob/60b873c/src/ObjectUtilities.ts#L39)

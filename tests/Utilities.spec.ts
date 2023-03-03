@@ -75,4 +75,12 @@ describe("Utilities", function() {
     expect(Utilities.isType(12, "string")).toBe(false);
   });
 
+  it("truncateMiddle should work as expected", () => {
+    expect(Utilities.truncateMiddle({a: 12})).toBe(`{"a":12}`);
+    expect(Utilities.truncateMiddle("Hello, World!")).toBe("Hello, World!");
+    const truncated = Utilities.truncateMiddle("Lakeside Park - Willows in the breeze - Lakeside Park - So many memories - Laughing rides - Midway lights - Shining stars on summer nights");
+    expect(truncated).toBe("Lakeside Park - Willows in the breeze - Lakeside Park - So many… Laughing rides - Midway lights - Shining stars on summer nights");
+    expect(truncated.length).toBe(128);
+  });
+
 });

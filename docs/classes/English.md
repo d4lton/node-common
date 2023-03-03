@@ -44,7 +44,7 @@ Copyright ©2022 Dana Basken
 
 #### Defined in
 
-[src/English.ts:53](https://github.com/d4lton/node-common/blob/22c7b35/src/English.ts#L53)
+[src/English.ts:53](https://github.com/d4lton/node-common/blob/60b873c/src/English.ts#L53)
 
 ___
 
@@ -65,7 +65,7 @@ ___
 
 #### Defined in
 
-[src/English.ts:36](https://github.com/d4lton/node-common/blob/22c7b35/src/English.ts#L36)
+[src/English.ts:36](https://github.com/d4lton/node-common/blob/60b873c/src/English.ts#L36)
 
 ___
 
@@ -86,7 +86,7 @@ ___
 
 #### Defined in
 
-[src/English.ts:45](https://github.com/d4lton/node-common/blob/22c7b35/src/English.ts#L45)
+[src/English.ts:45](https://github.com/d4lton/node-common/blob/60b873c/src/English.ts#L45)
 
 ___
 
@@ -109,7 +109,7 @@ Get the number of bytes for a simple english string's magnitude. See English.byt
 
 #### Defined in
 
-[src/English.ts:66](https://github.com/d4lton/node-common/blob/22c7b35/src/English.ts#L66)
+[src/English.ts:66](https://github.com/d4lton/node-common/blob/60b873c/src/English.ts#L66)
 
 ___
 
@@ -131,7 +131,7 @@ Get the number of milliseconds for a simple english string's timeframe. See Engl
 
 #### Defined in
 
-[src/English.ts:25](https://github.com/d4lton/node-common/blob/22c7b35/src/English.ts#L25)
+[src/English.ts:25](https://github.com/d4lton/node-common/blob/60b873c/src/English.ts#L25)
 
 ___
 
@@ -154,4 +154,4 @@ timeframe indicator of s, m, h, d, w for seconds, minutes, hours, days, week. Ex
 
 #### Defined in
 
-[src/English.ts:11](https://github.com/d4lton/node-common/blob/22c7b35/src/English.ts#L11)
+[src/English.ts:11](https://github.com/d4lton/node-common/blob/60b873c/src/English.ts#L11)

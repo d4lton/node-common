@@ -48,7 +48,7 @@ Copyright ©2022 Dana Basken
 
 #### Defined in
 
-[src/errors/HttpUnauthorizedError.ts:9](https://github.com/d4lton/node-common/blob/22c7b35/src/errors/HttpUnauthorizedError.ts#L9)
+[src/errors/HttpUnauthorizedError.ts:9](https://github.com/d4lton/node-common/blob/60b873c/src/errors/HttpUnauthorizedError.ts#L9)
 
 ## Properties
 
@@ -76,7 +76,7 @@ ___
 
 #### Defined in
 
-[src/errors/HttpError.ts:7](https://github.com/d4lton/node-common/blob/22c7b35/src/errors/HttpError.ts#L7)
+[src/errors/HttpError.ts:7](https://github.com/d4lton/node-common/blob/60b873c/src/errors/HttpError.ts#L7)
 
 ___
 

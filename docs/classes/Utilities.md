@@ -17,6 +17,7 @@ Copyright ©2021 Dana Basken
 - [isSet](Utilities.md#isset)
 - [isType](Utilities.md#istype)
 - [sleep](Utilities.md#sleep)
+- [truncateMiddle](Utilities.md#truncatemiddle)
 
 ## Constructors
 
@@ -47,7 +48,7 @@ Note: For objects, only a simple object works. Object instances will need their 
 
 #### Defined in
 
-[src/Utilities.ts:35](https://github.com/d4lton/node-common/blob/22c7b35/src/Utilities.ts#L35)
+[src/Utilities.ts:35](https://github.com/d4lton/node-common/blob/60b873c/src/Utilities.ts#L35)
 
 ___
 
@@ -69,7 +70,7 @@ Is the given value an object?
 
 #### Defined in
 
-[src/Utilities.ts:46](https://github.com/d4lton/node-common/blob/22c7b35/src/Utilities.ts#L46)
+[src/Utilities.ts:46](https://github.com/d4lton/node-common/blob/60b873c/src/Utilities.ts#L46)
 
 ___
 
@@ -91,7 +92,7 @@ Is a given value set (not null or undefined)?
 
 #### Defined in
 
-[src/Utilities.ts:25](https://github.com/d4lton/node-common/blob/22c7b35/src/Utilities.ts#L25)
+[src/Utilities.ts:25](https://github.com/d4lton/node-common/blob/60b873c/src/Utilities.ts#L25)
 
 ___
 
@@ -114,7 +115,7 @@ Check a value to see if it is a given type.
 
 #### Defined in
 
-[src/Utilities.ts:54](https://github.com/d4lton/node-common/blob/22c7b35/src/Utilities.ts#L54)
+[src/Utilities.ts:54](https://github.com/d4lton/node-common/blob/60b873c/src/Utilities.ts#L54)
 
 ___
 
@@ -137,4 +138,27 @@ Pause execution for a number of milliseconds.
 
 #### Defined in
 
-[src/Utilities.ts:10](https://github.com/d4lton/node-common/blob/22c7b35/src/Utilities.ts#L10)
+[src/Utilities.ts:10](https://github.com/d4lton/node-common/blob/60b873c/src/Utilities.ts#L10)
+
+___
+
+### truncateMiddle
+
+▸ `Static` **truncateMiddle**(`value`, `maxLength?`): `string`
+
+Given a value, return a string representation, truncating the string in the middle if it is longer than the given maxLength.
+
+#### Parameters
+
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `value` | `any` | `undefined` |
+| `maxLength` | `number` | `128` |
+
+#### Returns
+
+`string`
+
+#### Defined in
+
+[src/Utilities.ts:71](https://github.com/d4lton/node-common/blob/60b873c/src/Utilities.ts#L71)

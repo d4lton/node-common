@@ -65,4 +65,16 @@ export class Utilities {
     return true;
   }
 
+  /**
+   * Given a value, return a string representation, truncating the string in the middle if it is longer than the given maxLength.
+   */
+  static truncateMiddle(value: any, maxLength: number = 128): string {
+    value = typeof value === "string" ? value : `${JSON.stringify(value)}`;
+    if (value.length > maxLength) {
+      const half = Math.floor(maxLength / 2);
+      return value.substring(0, half - 1) + "…" + value.substring(value.length - half);
+    }
+    return value;
+  }
+
 }
