@@ -5,4 +5,9 @@
 import {AbstractHttpError} from "./AbstractHttpError";
 
 export class HttpError extends AbstractHttpError {
+
+  constructor(code: number, message?: string) {
+    super(code, message);
+  }
+
 }
