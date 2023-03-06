@@ -2,9 +2,9 @@
  * Copyright ©2022 Dana Basken
  */
 
-import {HttpError} from "./HttpError";
+import {AbstractHttpError} from "./AbstractHttpError";
 
-export class HttpUnauthorizedError extends HttpError {
+export class HttpUnauthorizedError extends AbstractHttpError {
 
   constructor(message?: string) {
     super(401, message || "Unauthorized");

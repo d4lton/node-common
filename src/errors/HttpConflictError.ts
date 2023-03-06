@@ -2,9 +2,9 @@
  * Copyright ©2022 Dana Basken
  */
 
-import {HttpError} from "./HttpError";
+import {AbstractHttpError} from "./AbstractHttpError";
 
-export class HttpConflictError extends HttpError {
+export class HttpConflictError extends AbstractHttpError {
 
   constructor(message?: string) {
     super(409, message || "Conflict");

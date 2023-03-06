@@ -1,14 +1,8 @@
 /**
- * Copyright ©2022 Dana Basken
+ * Copyright ©2023 Dana Basken
  */
 
-export abstract class HttpError extends Error {
+import {AbstractHttpError} from "./AbstractHttpError";
 
-  http_code: number;
-
-  protected constructor(code: number, message?: string) {
-    super(message);
-    this.http_code = code;
-  }
-
+export class HttpError extends AbstractHttpError {
 }

@@ -2,9 +2,9 @@
  * Copyright ©2022 Dana Basken
  */
 
-import {HttpError} from "./HttpError";
+import {AbstractHttpError} from "./AbstractHttpError";
 
-export class HttpResourceNotFoundError extends HttpError {
+export class HttpResourceNotFoundError extends AbstractHttpError {
 
   constructor(message?: string) {
     super(404, message || "Not Found");

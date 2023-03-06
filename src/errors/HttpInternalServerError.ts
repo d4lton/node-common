@@ -2,9 +2,9 @@
  * Copyright ©2022 Dana Basken
  */
 
-import {HttpError} from "./HttpError";
+import {AbstractHttpError} from "./AbstractHttpError";
 
-export class HttpInternalServerError extends HttpError {
+export class HttpInternalServerError extends AbstractHttpError {
 
   constructor(message?: string) {
     super(500, message || "Internal Server Error");

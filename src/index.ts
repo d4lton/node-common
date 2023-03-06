@@ -2,6 +2,7 @@
  * Copyright ©2023 Dana Basken
  */
 
+export {AbstractHttpError} from "./errors/AbstractHttpError";
 export {English} from "./English";
 export {HttpAcceptedError} from "./errors/HttpAcceptedError";
 export {HttpConflictError} from "./errors/HttpConflictError";
