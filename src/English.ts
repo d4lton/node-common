@@ -4,6 +4,16 @@
 
 export class English {
 
+  static DIVISIONS: any[] = [
+    {amount: 60, name: "seconds"},
+    {amount: 60, name: "minutes"},
+    {amount: 24, name: "hours"},
+    {amount: 7, name: "days"},
+    {amount: 4.34524, name: "weeks"},
+    {amount: 12, name: "months"},
+    {amount: Number.POSITIVE_INFINITY, name: "years"}
+  ];
+
   /**
    * Get milliseconds from a simple english string that consists of an optional sign (+/-), a decimal value, and a
    * timeframe indicator of s, m, h, d, w for seconds, minutes, hours, days, week. Example: "2w" for 2 weeks.
@@ -72,6 +82,22 @@ export class English {
       case "TB": return binary ? 1_099_511_627_776 : 1_000_000_000_000;
       default: throw new Error(`unknown magnitude: "${magnitude}"`);
     }
+  }
+
+  /**
+   * Format a date as an English relative time in the past. eg. "3 days ago"
+   */
+  static formatTimeAgo(date: Date, locale: string = "en-US"): any {
+    const formatter = new Intl.RelativeTimeFormat(locale, {numeric: "auto", style: "long"});
+    let duration = (date.getTime() - Date.now()) / 1000;
+    for (let i = 0; i <= English.DIVISIONS.length; i++) {
+      const division = English.DIVISIONS[i];
+      if (Math.abs(duration) < division.amount) {
+        return formatter.format(Math.round(duration), division.name);
+      }
+      duration /= division.amount;
+    }
+    return "forever";
   }
 
 }

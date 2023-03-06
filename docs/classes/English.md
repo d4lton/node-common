@@ -10,11 +10,16 @@ Copyright ©2022 Dana Basken
 
 - [constructor](English.md#constructor)
 
+### Properties
+
+- [DIVISIONS](English.md#divisions)
+
 ### Methods
 
 - [bytes](English.md#bytes)
 - [bytesToNumber](English.md#bytestonumber)
 - [bytesToString](English.md#bytestostring)
+- [formatTimeAgo](English.md#formattimeago)
 - [getMagnitudeBytes](English.md#getmagnitudebytes)
 - [getTimeframeMs](English.md#gettimeframems)
 - [ms](English.md#ms)
@@ -24,6 +29,16 @@ Copyright ©2022 Dana Basken
 ### constructor
 
 • **new English**()
+
+## Properties
+
+### DIVISIONS
+
+▪ `Static` **DIVISIONS**: `any`[]
+
+#### Defined in
+
+[src/English.ts:7](https://github.com/d4lton/node-common/blob/5a7ce4e/src/English.ts#L7)
 
 ## Methods
 
@@ -44,7 +59,7 @@ Copyright ©2022 Dana Basken
 
 #### Defined in
 
-[src/English.ts:53](https://github.com/d4lton/node-common/blob/60b873c/src/English.ts#L53)
+[src/English.ts:63](https://github.com/d4lton/node-common/blob/5a7ce4e/src/English.ts#L63)
 
 ___
 
@@ -65,7 +80,7 @@ ___
 
 #### Defined in
 
-[src/English.ts:36](https://github.com/d4lton/node-common/blob/60b873c/src/English.ts#L36)
+[src/English.ts:46](https://github.com/d4lton/node-common/blob/5a7ce4e/src/English.ts#L46)
 
 ___
 
@@ -86,7 +101,30 @@ ___
 
 #### Defined in
 
-[src/English.ts:45](https://github.com/d4lton/node-common/blob/60b873c/src/English.ts#L45)
+[src/English.ts:55](https://github.com/d4lton/node-common/blob/5a7ce4e/src/English.ts#L55)
+
+___
+
+### formatTimeAgo
+
+▸ `Static` **formatTimeAgo**(`date`, `locale?`): `any`
+
+Format a date as an English relative time in the past. eg. "3 days ago"
+
+#### Parameters
+
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `date` | `Date` | `undefined` |
+| `locale` | `string` | `"en-US"` |
+
+#### Returns
+
+`any`
+
+#### Defined in
+
+[src/English.ts:90](https://github.com/d4lton/node-common/blob/5a7ce4e/src/English.ts#L90)
 
 ___
 
@@ -109,7 +147,7 @@ Get the number of bytes for a simple english string's magnitude. See English.byt
 
 #### Defined in
 
-[src/English.ts:66](https://github.com/d4lton/node-common/blob/60b873c/src/English.ts#L66)
+[src/English.ts:76](https://github.com/d4lton/node-common/blob/5a7ce4e/src/English.ts#L76)
 
 ___
 
@@ -131,7 +169,7 @@ Get the number of milliseconds for a simple english string's timeframe. See Engl
 
 #### Defined in
 
-[src/English.ts:25](https://github.com/d4lton/node-common/blob/60b873c/src/English.ts#L25)
+[src/English.ts:35](https://github.com/d4lton/node-common/blob/5a7ce4e/src/English.ts#L35)
 
 ___
 
@@ -154,4 +192,4 @@ timeframe indicator of s, m, h, d, w for seconds, minutes, hours, days, week. Ex
 
 #### Defined in
 
-[src/English.ts:11](https://github.com/d4lton/node-common/blob/60b873c/src/English.ts#L11)
+[src/English.ts:21](https://github.com/d4lton/node-common/blob/5a7ce4e/src/English.ts#L21)

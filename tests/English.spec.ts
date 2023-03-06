@@ -27,4 +27,11 @@ describe("English", function() {
     expect(English.ms("10w")).toEqual(6048000000);
   });
 
+  it("formatTimeAgo should return reasonable values", () => {
+    const now = new Date();
+    expect(English.formatTimeAgo(now)).toBe("now");
+    now.setMonth(now.getMonth() - 6);
+    expect(English.formatTimeAgo(now)).toBe("6 months ago");
+  });
+
 });
