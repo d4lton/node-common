@@ -7,6 +7,7 @@ export {English} from "./English";
 export {HttpAcceptedError} from "./errors/HttpAcceptedError";
 export {HttpConflictError} from "./errors/HttpConflictError";
 export {HttpError} from "./errors/HttpError";
+export {HttpForbiddenError} from "./errors/HttpForbiddenError";
 export {HttpInternalServerError} from "./errors/HttpInternalServerError";
 export {HttpResourceNotFoundError} from "./errors/HttpResourceNotFoundError";
 export {HttpUnauthorizedError} from "./errors/HttpUnauthorizedError";
