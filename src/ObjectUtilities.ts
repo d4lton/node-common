@@ -58,4 +58,12 @@ export class ObjectUtilities {
     return parent;
   }
 
+  /**
+   * Deep clone an object. Will fail if the source object has circular references or other things
+   * that JSON.stringify doesn't like.
+   */
+  static clone(object: any): any {
+    return JSON.parse(JSON.stringify(object));
+  }
+
 }
