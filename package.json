@@ -3,7 +3,7 @@
   "version": "1.0.12",
   "description": "Common NodeJS Utilities",
   "license": "MIT",
-  "main": "src/index.ts",
+  "main": "dist/src/index.js",
   "scripts": {
     "test": "jest --rootDir tests",
     "test:integration": "jest --rootDir integrations",
