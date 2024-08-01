@@ -1,6 +1,6 @@
 {
   "name": "@d4lton/node-common",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Common NodeJS Utilities",
   "license": "UNLICENSED",
   "private": true,
