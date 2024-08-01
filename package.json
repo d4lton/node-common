@@ -1,6 +1,6 @@
 {
   "name": "@d4lton/node-common",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "Common NodeJS Utilities",
   "license": "MIT",
   "main": "dist/src/index.js",
