@@ -2,8 +2,7 @@
   "name": "@d4lton/node-common",
   "version": "1.0.11",
   "description": "Common NodeJS Utilities",
-  "license": "UNLICENSED",
-  "private": true,
+  "license": "MIT",
   "main": "src/index.ts",
   "scripts": {
     "test": "jest --rootDir tests",
