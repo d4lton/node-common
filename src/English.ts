@@ -30,6 +30,16 @@ export class English {
   }
 
   /**
+   * Get milliseconds from a simple english string and then increase or reduce that amount by a "fuzz" percentage.
+   * The percent is a fraction, so 0.25 represents 25%. See EnglishMs.ms().
+   */
+  static fuzzedMs(time: string, percent: number): number {
+    const baseMs = English.ms(time);
+    const fuzzMs = baseMs * percent;
+    return baseMs + Math.ceil((Math.random() * fuzzMs) - (fuzzMs / 2.0));
+  }
+
+  /**
    * Get the number of milliseconds for a simple english string's timeframe. See English.ms().
    */
   static getTimeframeMs(timeframe: string): number {
@@ -39,6 +49,20 @@ export class English {
       case "h": return 3600000;
       case "d": return 86400000;
       case "w": return 604800000;
+      default: throw new Error(`unknown timeframe: "${timeframe}"`);
+    }
+  }
+
+  /**
+   * Get an English name for a give timeframe code.
+   */
+  static getTimeframeName(timeframe: string, short: boolean = false): string {
+    switch (timeframe) {
+      case "s": return short ? "Sec" : "Second";
+      case "m": return short ? "Min" : "Minute";
+      case "h": return short ? "Hr" : "Hour";
+      case "d": return "Day";
+      case "w": return short ? "Wk" : "Week";
       default: throw new Error(`unknown timeframe: "${timeframe}"`);
     }
   }
@@ -58,6 +82,23 @@ export class English {
     let power = Math.floor(Math.log(value) / Math.log(kSize));
     const bytes = Math.round(value / Math.pow(kSize, power));
     return `${bytes}${["B", "KB", "MB", "GB", "TB"][power]}`;
+  }
+
+  /**
+   * Get a human-readable time string for a number of milliseconds.
+   */
+  static msToString(ms: number, short: boolean = false): string {
+    return ["w", "d", "h", "m", "s"]
+      .reduce((parts: any[], timeframe: string) => {
+        const timeframeMs = English.getTimeframeMs(timeframe);
+        if (ms > timeframeMs) {
+          const count = Math.floor(ms / timeframeMs);
+          ms -= count * timeframeMs;
+          parts.push(`${count} ${English.getTimeframeName(timeframe, short)}${English.plural(count)}`);
+        }
+        return [...parts];
+      }, [])
+      .join(", ") || `${ms} Millisecond${English.plural(ms)}`;
   }
 
   static bytes(bytes: any, binary: boolean = true): number | string {
@@ -98,6 +139,64 @@ export class English {
       duration /= division.amount;
     }
     return "forever";
+  }
+
+  static toCamelCase(text: string): string {
+    return text
+      .split(/([^a-zA-Z]+)/g)
+      .reduce((parts: string[], part: string) => {
+        if (part.trim() === "-") { part = ": "; }
+        part = part.replace(/([A-Z])([A-Z]+)/, (substring: string, ...args: any[]) => `${args[0]}${args[1].toLowerCase()}`);
+        return [...parts, part];
+      }, [])
+      .join("");
+  }
+
+  static pluralRules(value: number): string {
+    const suffixes: any = {"one": "st", "two": "nd", few: "rd", other: "th"};
+    const rules = new Intl.PluralRules("en", {type: "ordinal"});
+    return `${value}${suffixes[rules.select(value)]}`;
+  }
+
+  /**
+   * Remove the leading "the " from a given proper noun.
+   */
+  static baseProperNoun(noun: string): string {
+    const match = noun?.match(/^the (.+?)$/i);
+    return match ? match[1] : noun;
+  }
+
+  static numberFormatter(value: number, options?: Intl.NumberFormatOptions): string {
+    if (value == null) { return ""; }
+    const defaultOptions:Intl.NumberFormatOptions = {
+      style: "currency",
+      currency: "USD",
+      notation: "compact",
+      minimumFractionDigits: 1,
+      maximumFractionDigits: 1
+    };
+    return new Intl.NumberFormat("en-US", options ?? defaultOptions).format(value);
+  };
+
+  static numberToString(value: number): string {
+    if (value === 0) { return "0"; }
+    const kSize = 1000;
+    let power = Math.floor(Math.log(value) / Math.log(kSize));
+    value = Math.round(value / Math.pow(kSize, power));
+    return `${value}${["", "K", "M", "G", "T"][power]}`;
+  }
+
+  /**
+   * For a given number, return the plural suffix. By default, this is "s," but if the word you
+   * want to add the suffix too needs a special suffix, it can be provided, and a special
+   * "singular" prefix as well.
+   * EXAMPLES:
+   *   English.plural(2): return "s"
+   *   `cat${English.plural(2)}`: returns "cats"
+   *   `entr${English.plural(2), "ies", "y"}`: return "entries"
+   */
+  static plural(count: number, pluralSuffix: string = "s", singularSuffix: string = ""): string {
+    return count === 1 ? singularSuffix : pluralSuffix;
   }
 
 }
