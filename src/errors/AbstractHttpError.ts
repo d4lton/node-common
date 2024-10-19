@@ -4,11 +4,11 @@
 
 export abstract class AbstractHttpError extends Error {
 
-  http_code: number;
+  code: number;
 
   protected constructor(code: number, message?: string) {
     super(message);
-    this.http_code = code;
+    this.code = code;
   }
 
 }
