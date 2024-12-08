@@ -34,4 +34,10 @@ describe("English", function() {
     expect(English.formatTimeAgo(now)).toBe("6 months ago");
   });
 
+  it("fixed works as expected", () => {
+    expect(English.fixed(123.45, 2)).toBe(123.45);
+    expect(English.fixed("123.45", 2)).toBe(123.45);
+    expect(() => English.fixed({}, 2)).toThrow();
+  });
+
 });
