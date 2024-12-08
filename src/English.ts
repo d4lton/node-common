@@ -199,7 +199,7 @@ export class English {
     return count === 1 ? singularSuffix : pluralSuffix;
   }
 
-  static fixed(value: any, fractionDigits: number): number {
+  static fixed(value: any, fractionDigits: number = 2): number {
     value = typeof value === "number" ? value : Number.parseFloat(value);
     if (Number.isNaN(value)) { throw new Error(`"${value}" is not a number, and could not be converted to a number`); }
     return parseFloat(value.toFixed(fractionDigits));
