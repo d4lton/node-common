@@ -40,7 +40,7 @@
     "typescript": "5.5.4"
   },
   "config": {
-    "git_hash": "747ee46e02a6210f1f71a2b5398201ac3b83b529"
+    "git_hash": "60af4c82da3292fad26b87709fd7c2a6ab973a7b"
   },
   "jest": {
     "preset": "ts-jest",
